@@ -3,7 +3,6 @@ from urllib.request import Request, urlopen
 import random as rand
 
 #i could've just gotten the makeshift link for the random article, but that was boring..
-#was a function, now is automatic(?)
 
 i = 0
 def randomwiki(url,i):
