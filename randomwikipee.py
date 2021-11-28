@@ -7,8 +7,11 @@ import random as rand
 i = 0
 def randomwiki(url,i):
     i +=1
-    if i <= 10:
-        req = Request(url,headers = {'User-Agent': 'Mozilla/5.0'})
+    if i <=10:
+        if i == 1:
+            req = Request('https://en.wikipedia.org/wiki/potato',headers = {'User-Agent': 'Mozilla/5.0'})
+        else:
+            req= Request(url, headers = {'User-Agent':'Mozilla/5.0'})
         content = urlopen(req, timeout=10).read()
         page = BeautifulSoup(content,'html.parser')
 
@@ -26,4 +29,4 @@ def randomwiki(url,i):
         print(linktoscrape)
         randomwiki(linktoscrape, i)
 
-randomwiki('https://en.wikipedia.org/wiki/potato', i)
+randomwiki('', i)
